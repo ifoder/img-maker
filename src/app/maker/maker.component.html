@@ -1,0 +1,90 @@
+<div class="header">
+  <h2>{{ title }}</h2>
+  <p>{{ subTitle }}</p>
+</div>
+<form
+  class="example-form"
+  [formGroup]="imgForm"
+  #formDir="ngForm"
+  (ngSubmit)="onSubmit()"
+>
+  <!-- Input type file -->
+  <div class="example-choose-file">
+    <mat-form-field class="example-full-width" (click)="fileInput.click()">
+      <mat-label>{{ inputFile.label }}</mat-label>
+      <input [disabled]="true" matInput type="text" [value]="fileInput.value" />
+      <mat-icon matPrefix>{{ inputFile.icon }}</mat-icon>
+    </mat-form-field>
+    <div
+      class="file-error"
+      style="font-size: 75%"
+      *ngIf="file.invalid && (file.dirty || file.touched)"
+    >
+      You must select a value
+    </div>
+  </div>
+
+  <!-- ngx-photo-editor -->
+  <input
+    hidden
+    (change)="fileChangeEvent($event)"
+    formControlName="file"
+    #fileInput
+    type="file"
+    id="file"
+  />
+  <ngx-photo-editor
+    [imageChanedEvent]="imageChangedEvent"
+    (imageCropped)="imageCropped($event)"
+    [aspectRatio]="4 / 3"
+    [viewMode]="3"
+    [resizeToWidth]="resizeToWidth"
+  ></ngx-photo-editor>
+  <!--  -->
+
+  <!-- click url -->
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>{{ inputClickUrl.label }}</mat-label>
+      <input
+        matInput
+        type="text"
+        [placeholder]="inputClickUrl.placeholder"
+        formControlName="clickUrl"
+      />
+      <mat-error
+        *ngIf="clickUrl.invalid && (clickUrl.dirty || clickUrl.touched)"
+        >You must enter a value</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <!-- Animation slide -->
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>{{ selectAnimation.label }}</mat-label>
+      <mat-select formControlName="animation">
+        <mat-option
+          *ngFor="let option of selectAnimation.options"
+          [value]="option.value"
+          >{{ option.text }}</mat-option
+        >
+      </mat-select>
+      <mat-error
+        *ngIf="animation.invalid && (animation.dirty || animation.touched)"
+        >You must select a value</mat-error
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="card-container">
+    <button
+      type="submit"
+      color="primary"
+      class="card card-small"
+      [ngClass]="!imgForm.valid ? 'card-disabled' : ''"
+    >
+      {{ buttonSubmit }}
+    </button>
+  </div>
+</form>

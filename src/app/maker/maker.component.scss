@@ -1,0 +1,29 @@
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.example-form {
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-choose-file {
+  cursor: pointer;
+  input {
+    cursor: pointer;
+  }
+}
+
+.example-full-width {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.file-error {
+  margin-top: -18px;
+  margin-left: 8px;
+  font-size: 75%;
+  color: red;
+}
