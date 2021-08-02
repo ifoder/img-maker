@@ -1,27 +1,26 @@
-# ImgMaker
+## Test-Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+write an [Angular] application with one view
 
-## Development server
+2. in the view include a reactive form
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. The form should include the following
 
-## Code scaffolding
+## fields:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+a. image - file input
 
-## Build
+b. click url
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+c. animation drop down - slide from left to right and slide from right to left.
 
-## Running unit tests
+## generate an Html
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. after the form is valid generate an Html file from the input that shows the image in a
+   container entering with the selected animation and by clicking the image the click url will
+   open.
 
-## Running end-to-end tests
+## optional
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. add option to scale the image and move it inside the container in order to crop
+   the image.
