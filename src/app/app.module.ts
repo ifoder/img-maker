@@ -17,10 +17,9 @@ import {
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { PageImgComponent } from './page-img/page-img.component';
-
+import { CreateHtmlComponent } from './create-html/create-html.component';
 @NgModule({
-  declarations: [AppComponent, MakerComponent, PageImgComponent],
+  declarations: [AppComponent, MakerComponent, CreateHtmlComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

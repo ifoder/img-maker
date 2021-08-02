@@ -1,0 +1,10 @@
+<h2>First example using JavaScript and Angular ViewChild</h2>
+<div [@slideInOut]="image.animation" #titleContainer></div>
+
+<h2>Second example using Angular innerHTML</h2>
+<div [@slideInOut]="image.animation" [innerHTML]="element"></div>
+
+<h2>Default using angular</h2>
+<div [@slideInOut]="image.animation">
+  <img [src]="image.base64" [alt]="image.fileName" (click)="navigateToUrl()" />
+</div>

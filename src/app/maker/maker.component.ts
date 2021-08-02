@@ -51,7 +51,7 @@ export class MakerComponent extends BaseComponent {
   }
 
   navigatePageState(): void {
-    this.router.navigateByUrl('/new', {
+    this.router.navigateByUrl('/html', {
       state: this.image,
     });
   }

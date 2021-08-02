@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 export interface Image {
   fileName: string;
   clickUrl: string;
@@ -41,4 +42,21 @@ export abstract class BaseComponent {
     animation: '',
     base64: '',
   };
+
+  getLocalStorageImage() {
+    let data = JSON.parse(localStorage.getItem(this.localStorageFileName)!);
+    this.image = data;
+  }
+
+  setLocalStorageImage() {
+    if (this.image)
+      localStorage.setItem(
+        this.localStorageFileName,
+        JSON.stringify(this.image)
+      );
+  }
+
+  navigateToUrl() {
+    window.open(this.image.clickUrl);
+  }
 }
